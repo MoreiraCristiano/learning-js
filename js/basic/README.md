@@ -25,7 +25,7 @@
    Not reassigned;
    Bbjects (including arrays and functions) assigned to a variable using const are still mutable.
 
-```
+```javascript
 Const eg.:
 
 const s = [5, 6, 7];        // s = [5, 6, 7]
