@@ -56,7 +56,7 @@ Data collection in format square brackets format: ["string", 1237]
 
 ### Tips and tricks below
 
-```
+```javascript
 Get the last item of an array
 
 const arr = []
@@ -80,7 +80,7 @@ Its the initializer of a class, needed to be provided to instantiate a new obj
 
 It is convention to precede the name of a private variable with an underscore (\_). However, the practice itself does not make a variable private.
 
-```
+```javascript
 class UpperName {
    constructor(param) {
       this._param = param
@@ -104,7 +104,7 @@ console.log(test.param) // 10
 
 ### Properties and values
 
-```
+```javascript
 const cat = {
    name: "Whiskers",
    "total of legs": 4,
@@ -117,7 +117,7 @@ const cat = {
 
 The bracket notation is used when access the prop with a variable or with a "divided string" prop
 
-```
+```javascript
 cat.name;
 
 let name;
@@ -128,27 +128,27 @@ cat["name of cat"];
 
 ### Tips and tricks below
 
-```
-Verify if a prop exists in an obj
+```javascript
+// Verify if a prop exists in an obj
 
 obj.hasOwnProperty(propName)
 ```
 
-```
-Remove a prop of an obj
+```javascript
+// Remove a prop of an obj
 
 delete obj.prop
 ```
 
-```
-Add prop with dot and square notation
+```javascript
+// Add prop with dot and square notation
 
 obj.newprop = <value>
 obj[newprop] = <value>
 ```
 
-```
-JS provides a function to not allow changes in a obj: Object.freeze(myObj)
+```javascript
+// JS provides a function to not allow changes in a obj: Object.freeze(myObj)
 
 let obj = {
    name:"FreeCodeCamp",
@@ -164,13 +164,10 @@ console.log(obj); // { name: "FreeCodeCamp", review: "Awesome" }
 
 ### Declaration
 
-```
-
+```javascript
 function name(param) {
-....
    return // If you do not specify the return, js function will return a undefined value
 }
-
 ```
 
 ### Scopes
@@ -183,7 +180,7 @@ When you do this, the local var takes precedence over the global.
 Use the Rest(...) parameter with function parameters to use a function with undefined
 number of parameters
 
-```
+```javascript
 function howMany(...args) {
    return "You have passed " + args.length + " arguments.";
 }
@@ -194,7 +191,7 @@ function howMany(...args) {
 1. Used to write concise anonymous function (functions without a name)
 2. Can receive a simple parameter or a default parameter
 
-```
+```javascript
 const myFunc = (param="default value if param is undefined") => {
    const myVar = "value";
    return myVar;
@@ -222,7 +219,7 @@ const myFunc = (param="default value if param is undefined") => {
 1. The parseInt() function parses a string and returns an integer.
 2. parseInt(string, radix); -> radix: which specifies the base of the number in the string
 
-```
+```javascript
 const a = parseInt("007"); // a = 007
 ```
 
@@ -231,7 +228,7 @@ const a = parseInt("007"); // a = 007
 1. Basic syntax: is a == b ? "Equal" : "Not Equal"
 2. Can be used with one or multiple conditions like if/else if/else
 
-```
+```javascript
 num > 0 ? "positive" : num < 0 ? "negative" : "zero"
 ```
 
@@ -239,7 +236,7 @@ num > 0 ? "positive" : num < 0 ? "negative" : "zero"
 
 ### Used to return a unpacked array
 
-```
+```javascript
 const arr = [6, 89, 3, 45];
 const maximus = Math.max(...arr);
 ```
@@ -249,7 +246,7 @@ in an array literal.
 
 **The following code will not work:**
 
-```
+```javascript
 const spreaded = ...arr;
 ```
 
@@ -257,7 +254,7 @@ const spreaded = ...arr;
 
 ### Special syntax for neatly assigning values taken directly from an object.
 
-```
+```javascript
 const user = { name: 'John Doe', age: 34 };
 const { name, age } = user;
 
@@ -274,7 +271,7 @@ const { johnDoe: { age: userAge, email: userEmail }} = user;
 
 ### ES6 makes easy to destructuring arrays also
 
-```
+```javascript
 const [a, b] = [1, 2, 3, 4, 5, 6]; // a = 1; b = 2;
 const [a, b,,, c] = [1, 2, 3, 4, 5, 6]; // a = 1; b = 2; c = 5;
 ```
@@ -283,13 +280,13 @@ const [a, b,,, c] = [1, 2, 3, 4, 5, 6]; // a = 1; b = 2; c = 5;
 
 ### Destructuring assignment with the Rest parameter to performe an effective array.slice()
 
-```
+```javascript
 const [a, b, ...arr] = [1, 2, 3, 4, 5, 7]; a = 1; b = 2; arr = [3,4,5,7]
 ```
 
 ### Destructuring an object sent to a function parameter
 
-```
+```javascript
 const profileUpdate = ({ name, age, nationality, location }) => {}
 
 profileUpdate(obj)
@@ -299,18 +296,18 @@ profileUpdate(obj)
 
 ### type = module allow a JS file to use import and export modules
 
-```
+```javascript
 <script type="module" src="filename.js"></script>
 ```
 
 ### Use export to share a code block
 
-```
+```javascript
 export const add = (x, y) => {
    return x + y;
 }
 
-or
+// or
 
 const add = (x, y) => {
    return x + y;
@@ -321,7 +318,7 @@ export { add };
 
 ### If you have more functions in the same file to export use
 
-```
+```javascript
 const add = (x, y) => {
    return x + y;
 }
@@ -335,13 +332,13 @@ export { add, subtract };
 
 ### To import from a module use
 
-```
+```javascript
 import { add, subtract } from "./filepath.js;
 ```
 
 To import all from a module use \* notation
 
-```
+```javascript
 import \* as myMathModule from "./math_functions.js";
 ```
 
@@ -349,7 +346,7 @@ import \* as myMathModule from "./math_functions.js";
 
 Since export default is used to declare a fallback value for a module or file, you can only have one value be a default export in each module or file. Additionally, you cannot use export default with var, let, or const
 
-```
+```javascript
 export default function add(x, y) {
    return x + y;
 }
@@ -359,7 +356,7 @@ export default function add(x, y) {
 
 The imported value, add, is not surrounded by curly braces. You can use any name here when importing a default.
 
-```
+```javascript
 import add from "./math_functions.js";
 ```
 
@@ -375,19 +372,19 @@ A promise has three states
 
 Basic promise:
 
-```
+```javascript
 const myPromise = new Promise((resolve, reject) => {});
 ```
 
 Handle a fulfilled promise with then
 
-```
+```javascript
 myPromise.then(result => {});
 ```
 
 Handle a reject promise with catch
 
-```
+```javascript
 myPromise.catch(error => {});
 ```
 
@@ -397,7 +394,7 @@ Regular expressions are used in programming languages to match parts of strings.
 
 ### One way to test a regex in js is using the method .test()
 
-```
+```javascript
 let testStr = "freeCodeCamp";
 let testRegex = /Code/;
 testRegex.test(testStr); // true
@@ -405,7 +402,7 @@ testRegex.test(testStr); // true
 
 ### Matching a string with different possibilities with OR operator (|)
 
-```
+```javascript
 myRegex = /yes|no|maybe/
 ```
 
@@ -453,13 +450,13 @@ Flag y
 
 To extract strings use the method .match()
 
-```
+```javascript
 "Hello, World!".match(/Hello/); //["Hello"]
 ```
 
 To find more than the first match use the flag g
 
-```
+```javascript
 let testStr = "Repeat, Repeat, Repeat";
 let repeatRegex = /Repeat/g;
 testStr.match(repeatRegex); // ['Repeat', 'Repeat', 'Repeat']
@@ -471,7 +468,7 @@ testStr.match(repeatRegex); // ['Repeat', 'Repeat', 'Repeat']
 
 The wildcard character . will match any one character.
 
-```
+```javascript
 let humStr = "I'll hum a hummmmmmmmmm song";
 let huRegex = /hu./;
 huRegex.test(humStr); // true because have one or more "hu." words
@@ -483,7 +480,7 @@ Character classes allow you to define a group of characters you wish to match by
 
 For example, if I need to find "bag", "big", "bug" but not "bog. I can create the regex /b[aiu]/
 
-```
+```javascript
 let bigStr = "big";
 let bagStr = "bag";
 let bugStr = "bug";
@@ -499,7 +496,7 @@ bogStr.match(bgRegex);        // null
 
 Inside a character set, you can define a range of characters to match using a hyphen character: -
 
-```
+```javascript
 let catStr = "cat";
 let batStr = "bat";
 let matStr = "mat";
@@ -508,7 +505,7 @@ let bgRegex = /[a-e]at/;
 
 It is possible to do with numbers also.
 
-```
+```javascript
 let jennyStr = "Jenny8675309";
 let myRegex = /[a-z0-9]/ig;
 jennyStr.match(myRegex);
@@ -518,7 +515,7 @@ jennyStr.match(myRegex);
 
 Used to specify which characters I dont want to find using the ^
 
-```
+```javascript
 /[^aeiou]/gi      // will match all non vowels
 ```
 
@@ -526,7 +523,7 @@ Used to specify which characters I dont want to find using the ^
 
 Outside of a char set the ^is used to search for patterns at the beginning of strings
 
-```
+```javascript
 let firstString = "Ricky is first and can be found.";
 let firstRegex = /^Ricky/;
 firstRegex.test(firstString);          // true
@@ -539,7 +536,7 @@ firstRegex.test(notFirst);             // false
 
 To search the end of strings using the dollar sign character $ at the end of the regex.
 
-```
+```javascript
 let theEnding = "This is a never ending story";
 let storyRegex = /story$/;
 storyRegex.test(theEnding);         // true
@@ -552,7 +549,7 @@ storyRegex.test(noEnding);          // false
 
 You can use the + character to check if that is the case
 
-```
+```javascript
 let regex = /a+/g          // Will find and return ["a"]
 ```
 
@@ -560,7 +557,7 @@ let regex = /a+/g          // Will find and return ["a"]
 
 The character to do this is the asterisk or star: \*
 
-```
+```javascript
 let goRegex = /go*/;
 ```
 
@@ -570,7 +567,7 @@ Regular expressions are by default greedy, so the match would return ["titani"].
 
 However, you can use the ? character to change it to lazy matching. "titanic" matched against the adjusted regex of /t[a-z]\*?i/ returns ["ti"].
 
-```
+```javascript
 const titanic = "titanic"
 const mregex = /t[a-z]*?i/
 
@@ -583,7 +580,7 @@ console.log(titanic.match(mregex))  // ["ti"]
 
 \w is a short mode to find [A-Za-z0-9_]
 
-```
+```javascript
 let shortHand = /\w/;
 ```
 
@@ -591,7 +588,7 @@ let shortHand = /\w/;
 
 \W is a short mode to find [^a-za-z0-9_]
 
-```
+```javascript
 let shortHand = /\W+/;
 ```
 
@@ -619,7 +616,7 @@ You can specify the lower and upper number of patterns with quantity specifiers.
 
 for example: /a{3,5}h/
 
-```
+```javascript
 let A4 = "aaaah";
 let A2 = "aah";
 let multipleA = /a{3,5}h/;
@@ -630,7 +627,7 @@ let multipleA = /a{3,5}h/;
 You can specify the lower and upper number of patterns with quantity specifiers using curly brackets.
 For example: /ha{3,}h/
 
-```
+```javascript
 let A4 = "haaaah";
 let A2 = "haah";
 let A100 = "h" + "a".repeat(100) + "h";
@@ -644,7 +641,7 @@ multipleA.test(A100);
 
 You can specify the lower and upper number of patterns with quantity specifiers using curly brackets.
 
-```
+```javascript
 let A4 = "haaaah";
 let A3 = "haaah";
 let A100 = "h" + "a".repeat(100) + "h";
@@ -658,7 +655,7 @@ multipleHA.test(A100);
 
 You can specify the possible existence of an element with a question mark, ?. This checks for zero or one of the preceding element. You can think of this symbol as saying the previous element is optional.
 
-```
+```javascript
 let american = "color";
 let british = "colour";
 let rainbowRegex= /colou?r/;
@@ -671,7 +668,7 @@ rainbowRegex.test(british);
 Sometimes we want to check for groups of characters using a Regular Expression and to achieve that we use parentheses ().
 If you want to find either Penguin or Pumpkin in a string, you can use the following Regular Expression: /P(engu|umpk)in/g
 
-```
+```javascript
 let testStr = "Pumpkin";
 let testRegex = /P(engu|umpk)in/;
 testRegex.test(testStr);
@@ -679,16 +676,8 @@ testRegex.test(testStr);
 
 ### Remove Whitespace from Start and End
 
-```
+```javascript
 let hello = "   Hello, World!  ";
 let wsRegex = /^\s+|\s+$/g;
 let result = hello.replace(wsRegex, "");
 ```
-
-### Debugging
-
-ADD MORE THINGS
-
-console.log()
-console.clear()
-typeof
